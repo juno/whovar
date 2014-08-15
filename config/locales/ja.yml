@@ -1,0 +1,8 @@
+ja:
+  layouts:
+    application:
+  sessions:
+    create:
+      created: "サインインしました。"
+    destroy:
+      destroyed: "サインアウトしました。"

@@ -20,4 +20,6 @@
 /log/*.log
 /tmp
 
+/public/assets
+
 /vendor/bundle
