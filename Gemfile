@@ -22,6 +22,7 @@ end
 group :development, :test do
   gem 'dotenv-deployment', '0.0.2'
   gem 'dotenv-rails', '0.11.1'
+  gem 'factory_girl_rails', '4.4.1'
   gem 'rspec-rails', '3.0.2'
 end
 
@@ -46,7 +47,6 @@ end
 group :test do
   gem 'capybara', '2.4.1'
   gem 'database_cleaner', '1.3.0'
-  gem 'factory_girl_rails', '4.4.1'
   gem 'shoulda-matchers', '2.6.2', require: false
   gem 'simplecov', '0.9.0'
   gem 'webmock', '1.18.0'
