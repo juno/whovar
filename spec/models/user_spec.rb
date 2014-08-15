@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  def auth_mock
+  def auth_stub
     {
       'provider' => 'github',
       'uid' => '1',
@@ -41,7 +41,7 @@ RSpec.describe User, type: :model do
   describe '.from_omniauth' do
     context 'user exists' do
       before do
-        @auth = auth_mock
+        @auth = auth_stub
 
         # Creates user corresponds with the auth
         @user = FactoryGirl.create(
@@ -63,27 +63,27 @@ RSpec.describe User, type: :model do
         }
         expect_any_instance_of(User).to receive(:update!).with(attrs)
 
-        described_class.from_omniauth(auth_mock)
+        described_class.from_omniauth(auth_stub)
       end
 
       it 'returns an instance of User' do
-        expect(described_class.from_omniauth(auth_mock)).to be_kind_of(User)
+        expect(described_class.from_omniauth(auth_stub)).to be_kind_of(User)
       end
     end
 
     context 'user does not exist' do
       it 'creates a new user' do
         expect {
-          described_class.from_omniauth(auth_mock)
+          described_class.from_omniauth(auth_stub)
         }.to change(User, :count).by(1)
       end
 
       it 'returns an instance of User' do
-        expect(described_class.from_omniauth(auth_mock)).to be_kind_of(User)
+        expect(described_class.from_omniauth(auth_stub)).to be_kind_of(User)
       end
 
       it 'returns a persisted object' do
-        expect(described_class.from_omniauth(auth_mock)).to be_persisted
+        expect(described_class.from_omniauth(auth_stub)).to be_persisted
       end
     end
   end
