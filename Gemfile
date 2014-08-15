@@ -8,6 +8,8 @@ gem 'pg', '0.17.1'
 gem 'coffee-rails', '4.0.1'
 gem 'jbuilder', '2.1.3'
 gem 'jquery-rails', '3.1.1'
+gem 'omniauth', '1.2.2'
+gem 'omniauth-github', '1.1.2'
 gem 'sass-rails', '4.0.3'
 gem 'turbolinks', '2.2.2'
 gem 'uglifier', '2.5.3'
@@ -18,6 +20,8 @@ group :production do
 end
 
 group :development, :test do
+  gem 'dotenv-deployment', '0.0.2'
+  gem 'dotenv-rails', '0.11.1'
   gem 'rspec-rails', '3.0.2'
 end
 
