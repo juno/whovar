@@ -46,6 +46,7 @@ end
 
 group :test do
   gem 'capybara', '2.4.1'
+  gem 'codeclimate-test-reporter', '0.4.0', require: false
   gem 'database_cleaner', '1.3.0'
   gem 'shoulda-matchers', '2.6.2', require: false
   gem 'simplecov', '0.9.0'

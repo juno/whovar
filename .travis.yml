@@ -7,4 +7,6 @@ before_script:
   - 'bundle exec rake db:setup'
 script: 'RAILS_ENV=test bundle exec rake'
 env:
-  - DB=postgresql
+  global:
+    - DB=postgresql
+    - secure: "Jf/AiQkwikcxU0SKtB8wQ4/ytEGknQfO/VjRrz2XVVptgcxm6TUNz6hiuhfvVIPY7ZUhAnd67qKMVBOk1Be0SKVNaGvlRAZyKKlmlfCGGjvIe18njJYKSC+DubbRco232ngze2dZ69jgidmaNbUIGK6ywx+HsFCR9lKgGT5mf3Q="
