@@ -1,0 +1,4 @@
+test:
+  adapter: postgresql
+  database: whovar_test
+  username: postgres

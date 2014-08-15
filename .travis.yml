@@ -1,0 +1,10 @@
+language: ruby
+rvm:
+  - 2.1.1
+before_script:
+  - psql -c 'create database whovar_test;' -U postgres
+  - 'cp config/database.travis.yml config/database.yml'
+  - 'bundle exec rake db:setup'
+script: 'RAILS_ENV=test bundle exec rake'
+env:
+  - DB=postgresql
