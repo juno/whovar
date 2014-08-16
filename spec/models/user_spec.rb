@@ -13,6 +13,10 @@ RSpec.describe User, type: :model do
     }
   end
 
+  describe 'Associations' do
+    it { is_expected.to have_many(:items).dependent(:restrict_with_exception) }
+  end
+
   describe 'Validations' do
     it { is_expected.to validate_presence_of(:provider) }
     it { is_expected.to validate_presence_of(:uid) }

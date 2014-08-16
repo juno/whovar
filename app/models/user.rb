@@ -1,5 +1,7 @@
 # User model
 class User < ActiveRecord::Base
+  has_many :items, dependent: :restrict_with_exception
+
   validates :provider, presence: true
   validates :uid, presence: true, uniqueness: { case_sensitive: false, scope: :provider }
   validates :username, presence: true, length: { in: 1..255 }
